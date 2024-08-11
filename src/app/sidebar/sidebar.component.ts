@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -11,20 +12,21 @@ import { RouterModule } from '@angular/router';
 })
 export class SidebarComponent implements OnInit {
   userRole: string = '';
+  isCollapsed: boolean = false;
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
     this.userRole = currentUser.role || '';
   }
 
-  logout() {
-    localStorage.removeItem('currentUser');
-    window.location.href = '/login';
-  }
-
-  isCollapsed: boolean = false;
-
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  logout() {
+    localStorage.removeItem('currentUser');
+    this.router.navigate(['/']);
   }
 }
