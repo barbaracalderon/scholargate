@@ -3,7 +3,7 @@
     
     <ul class="nav flex-column" [class.hidden]="isCollapsed">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/home">Início</a>
+        <button class="nav-link" routerLink="/home">Início</button>
       </li>
       <li *ngIf="userRole === 'ADMINISTRADOR'" class="nav-item">
         <a class="nav-link" routerLink="/cadastro-docente">Cadastro Docente</a>

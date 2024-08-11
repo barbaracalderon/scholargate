@@ -12,6 +12,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   pageTitle = 'Scholargate';
   isLoginPage: boolean = false;
 
