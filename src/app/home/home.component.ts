@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AdminHomeComponent } from "../home-admin/home-admin.component";
+import { DocenteHomeComponent } from "../home-docente/home-docente.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, AdminHomeComponent],
+  imports: [CommonModule, RouterModule, AdminHomeComponent, DocenteHomeComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
