@@ -5,36 +5,59 @@
     color: white;
     padding-top: 1rem;
     position: fixed;
-    transition: width 0.3s;
-}
-
-.nav-link {
+    transition: width 0.3s, transform 0.3s;
+    z-index: 1000;
+  }
+  
+  .nav-link {
     color: white;
     padding: 10px;
     text-align: left;
-}
-
-.nav-link:hover {
+  }
+  
+  .nav-link:hover {
     background-color: #495057;
     text-decoration: none;
-}
-
-button {
+  }
+  
+  button {
     background-color: transparent;
     border: none;
     color: white;
     font-size: 1.5rem;
-}
-
-.collapsed {
+  }
+  
+  .collapsed {
     width: 60px;
-}
-
-button.nav-link {
+  }
+  
+  button.nav-link {
     width: 100%;
     text-align: left;
-}
-
-.hidden {
+  }
+  
+  .hidden {
     display: none;
-}
+  }
+  
+
+  @media (max-width: 768px) {
+    .sidebar {
+      transform: translateX(-100%);
+      width: 80%; 
+      max-width: 300px;
+      position: absolute; 
+    }
+  
+    .sidebar.overlay {
+      transform: translateX(0);
+    }
+  
+    .toggle-button {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1001;
+    }
+  }
+  

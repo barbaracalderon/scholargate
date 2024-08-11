@@ -1,7 +1,7 @@
-<div class="sidebar" [class.collapsed]="isCollapsed">
-    <button (click)="toggleCollapse()">☰</button>
-    
-    <ul class="nav flex-column" [class.hidden]="isCollapsed">
+<div class="sidebar" [class.collapsed]="isCollapsed || isMobile" [class.overlay]="isMobileSidebarOpen">
+    <button class="toggle-button" (click)="toggleCollapse()">☰</button>
+  
+    <ul class="nav flex-column" [class.hidden]="isCollapsed && !isMobileSidebarOpen">
       <li class="nav-item">
         <button class="nav-link" routerLink="/home">Início</button>
       </li>
@@ -28,3 +28,4 @@
       </li>
     </ul>
   </div>
+  

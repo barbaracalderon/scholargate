@@ -21,7 +21,6 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        // Verifica se a rota atual é a de login
         this.isLoginPage = this.router.url === '/' || this.router.url === '/login';
       }
     });

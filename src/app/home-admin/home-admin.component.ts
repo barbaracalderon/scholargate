@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './home-admin.component.html',
   styleUrls: ['./home-admin.component.css']
 })
-export class AdminHomeComponent implements OnInit {
+export class HomeAdminComponent implements OnInit {
   alunosCadastrados: number = 0;
   docentesCadastrados: number = 0;
   turmasCadastradas: number = 0;
