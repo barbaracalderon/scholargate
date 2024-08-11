@@ -1,6 +1,6 @@
 <div *ngIf="userRole === 'ADMINISTRADOR'">
     <h1>Bem-vindo, Administrador!</h1>
-    <!-- Conteúdo específico para administrador -->
+    <app-home-admin></app-home-admin>
   </div>
   
   <div *ngIf="userRole === 'DOCENTE'">
