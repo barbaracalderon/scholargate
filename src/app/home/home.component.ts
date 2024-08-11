@@ -19,13 +19,5 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
     this.userRole = currentUser.role || '';
-
-    if (this.userRole === 'ADMINISTRADOR') {
-      // Conteúdo específico para administrador
-    } else if (this.userRole === 'DOCENTE') {
-      // Conteúdo específico para docente
-    } else if (this.userRole === 'ALUNO') {
-      // Conteúdo específico para aluno
-    }
   }
 }
