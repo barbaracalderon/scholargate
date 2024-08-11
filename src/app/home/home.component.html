@@ -1,0 +1,15 @@
+<div *ngIf="userRole === 'ADMINISTRADOR'">
+    <h1>Bem-vindo, Administrador!</h1>
+    <!-- Conteúdo específico para administrador -->
+  </div>
+  
+  <div *ngIf="userRole === 'DOCENTE'">
+    <h1>Bem-vindo, Docente!</h1>
+    <!-- Conteúdo específico para docente -->
+  </div>
+  
+  <div *ngIf="userRole === 'ALUNO'">
+    <h1>Bem-vindo, Aluno!</h1>
+    <!-- Conteúdo específico para aluno -->
+  </div>
+  
