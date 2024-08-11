@@ -23,7 +23,6 @@ export class LoginComponent {
   onSubmit() {
     const { email, password } = this.loginForm.value;
 
-    // Mock de usuários
     const usersMock = [
       { email: 'admin@scholargate.com', password: 'admin123', role: 'ADMINISTRADOR' },
       { email: 'docente@scholargate.com', password: 'docente123', role: 'DOCENTE' },
