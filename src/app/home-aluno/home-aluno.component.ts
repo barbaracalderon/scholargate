@@ -9,13 +9,12 @@ import { RouterModule } from '@angular/router';
   templateUrl: './home-aluno.component.html',
   styleUrls: ['./home-aluno.component.css']
 })
-export class AlunoHomeComponent implements OnInit {
-  avaliacoes: any[] = []; // Dados das avaliações
-  materias: string[] = []; // Matérias inscritas
-  cursosExtras: string[] = ['Artesanato', 'Informática', 'Artes Cênicas']; // Cursos extras
+export class HomeAlunoComponent implements OnInit {
+  avaliacoes: any[] = []; 
+  materias: string[] = [];
+  cursosExtras: string[] = ['Artesanato', 'Informática', 'Artes Cênicas']; 
 
   ngOnInit() {
-    // Mock data - Em uma aplicação real, você carregaria esses dados de um serviço
     this.avaliacoes = [
       { nome: 'Prova de Matemática', materia: 'Matemática', data: '2024-08-15' },
       { nome: 'Redação', materia: 'Português', data: '2024-08-20' },
@@ -26,7 +25,6 @@ export class AlunoHomeComponent implements OnInit {
   }
 
   verMaisAvaliacao(avaliacao: any) {
-    // Redireciona para a página de notas de aluno
     alert(`Redirecionando para a página de notas de aluno para a avaliação: ${avaliacao.nome}.`);
   }
 }

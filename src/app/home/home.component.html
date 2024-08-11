@@ -1,16 +1,11 @@
-<app-toolbar [pageTitle]="'Página Inicial'"></app-toolbar>
 <div *ngIf="userRole === 'ADMINISTRADOR'">
-    <h1>Bem-vindo, Administrador!</h1>
-    <app-home-admin></app-home-admin>
-  </div>
-  
-  <div *ngIf="userRole === 'DOCENTE'">
-    <h1>Bem-vindo, Docente!</h1>
-    <app-home-docente></app-home-docente>
-  </div>
-  
-  <div *ngIf="userRole === 'ALUNO'">
-    <h1>Bem-vindo, Aluno!</h1>
-    <app-home-aluno></app-home-aluno>
-  </div>
-  
+  <app-home-admin></app-home-admin>
+</div>
+
+<div *ngIf="userRole === 'DOCENTE'">
+  <app-home-docente></app-home-docente>
+</div>
+
+<div *ngIf="userRole === 'ALUNO'">
+  <app-home-aluno></app-home-aluno>
+</div>

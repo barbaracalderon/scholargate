@@ -9,10 +9,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent {
-  @Input() pageTitle: string = '';  // Título da página passado por input
+  @Input() pageTitle: string = '';
 
-  userName: string = ''; // Nome do usuário logado
-  userRole: string = ''; // Função do usuário logado
+  userName: string = '';
+  userRole: string = '';
 
   ngOnInit() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');

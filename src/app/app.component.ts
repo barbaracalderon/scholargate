@@ -1,13 +1,30 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ToolbarComponent, SidebarComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'scholargate';
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  pageTitle = 'Scholargate';
+  isLoginPage: boolean = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isLoginPage = this.router.url === '/' || this.router.url === '/login';
+      }
+    });
+  }
+
+  ngOnInit() {}
 }

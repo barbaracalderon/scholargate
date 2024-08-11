@@ -13,7 +13,6 @@ export class DocenteHomeComponent implements OnInit {
   alunos: any[] = []; // Dados dos alunos
 
   ngOnInit() {
-    // Mock data - Em uma aplicação real, você carregaria esses dados de um serviço
     this.alunos = [
       { nome: 'João Silva', idade: 20, email: 'joao@example.com' },
       { nome: 'Maria Oliveira', idade: 22, email: 'maria@example.com' },
@@ -22,12 +21,10 @@ export class DocenteHomeComponent implements OnInit {
   }
 
   pesquisarAluno(query: string) {
-    // Função de pesquisa - aqui você pode implementar a lógica para buscar alunos
     alert('Função de pesquisa ainda não implementada.');
   }
 
   lancarNota(aluno: any) {
-    // Redireciona para a página de cadastro de avaliação
     alert(`Redirecionando para a página de lançamento de nota para ${aluno.nome}.`);
   }
 }
