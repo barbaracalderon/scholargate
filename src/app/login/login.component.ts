@@ -24,9 +24,9 @@ export class LoginComponent {
     const { email, password } = this.loginForm.value;
 
     const usersMock = [
-      { email: 'admin@scholargate.com', password: 'admin123', role: 'ADMINISTRADOR' },
-      { email: 'docente@scholargate.com', password: 'docente123', role: 'DOCENTE' },
-      { email: 'aluno@scholargate.com', password: 'aluno123', role: 'ALUNO' }
+      { email: 'admin@scholargate.com', password: 'admin123', role: 'ADMINISTRADOR', name: 'Marina Oliveira' },
+      { email: 'docente@scholargate.com', password: 'docente123', role: 'DOCENTE', name: 'Otávio Queiroz' },
+      { email: 'aluno@scholargate.com', password: 'aluno123', role: 'ALUNO', name: 'Pedro Torres' }
     ];
 
     const user = usersMock.find(u => u.email === email && u.password === password);
