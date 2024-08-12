@@ -1,6 +1,8 @@
 <ng-container *ngIf="!isLoginPage">
-    <app-toolbar [pageTitle]="pageTitle"></app-toolbar>
-    <app-sidebar></app-sidebar>
-  </ng-container>
+  <app-toolbar [pageTitle]="pageTitle"></app-toolbar>
+  <app-sidebar></app-sidebar>
+</ng-container>
+
+<main role="main" class="content">
   <router-outlet></router-outlet>
-  
+</main>
