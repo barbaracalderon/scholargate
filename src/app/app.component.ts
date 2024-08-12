@@ -3,11 +3,12 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ToolbarComponent, SidebarComponent, CommonModule],
+  imports: [RouterOutlet, ToolbarComponent, SidebarComponent, CommonModule, HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
