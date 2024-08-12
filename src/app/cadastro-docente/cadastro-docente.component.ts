@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ViaCepService } from '../services/via-cep.service';
+import { DocenteService } from '../services/docente.service';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -9,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   selector: 'app-cadastro-docente',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  providers: [ViaCepService],
+  providers: [ViaCepService, DocenteService],
   templateUrl: './cadastro-docente.component.html',
   styleUrls: ['./cadastro-docente.component.scss']
 })
@@ -20,7 +21,12 @@ export class CadastroDocenteComponent implements OnInit {
   materias = ['Matemática', 'Física', 'Química', 'História']; // Exemplo de matérias
   isEditing = false;
 
-  constructor(private fb: FormBuilder, private viaCepService: ViaCepService, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private viaCepService: ViaCepService,
+    private router: Router,
+    private docenteService: DocenteService
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -73,14 +79,20 @@ export class CadastroDocenteComponent implements OnInit {
   onSubmit(): void {
     if (this.docenteForm.valid) {
       const docente = this.docenteForm.value;
-      docente.id = this.generateUniqueId(); // Função para gerar ID único
+      docente.id = this.generateUniqueId();
+      this.docenteService.saveDocente(docente);
       alert('Cadastro realizado com sucesso!');
-      // Aqui você pode adicionar lógica para salvar o docente no backend ou local storage
-      this.router.navigate(['/']); // Redirecionar para a página inicial ou de listagem
+      this.router.navigate(['/']);
+    } else {
+      alert('Por favor, preencha todos os campos obrigatórios.');
     }
   }
 
+  onCancel(): void {
+    this.router.navigate(['/']); 
+  }
+
   private generateUniqueId(): string {
-    return Math.random().toString(36).substr(2, 9); // Exemplo de ID único
+    return Math.random().toString(36).substr(2, 9);
   }
 }
