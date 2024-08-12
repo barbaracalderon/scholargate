@@ -1,0 +1,12 @@
+/* Adiciona um pouco mais de estilo ao formulário */
+form {
+    background-color: #ffffff; /* Fundo branco para o formulário */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  /* Adiciona um estilo extra aos botões */
+  .btn {
+    border-radius: 0.25rem; /* Bordas arredondadas para os botões */
+  }
+  
