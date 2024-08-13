@@ -40,7 +40,7 @@ export class CadastroDocenteComponent implements OnInit {
       cpf: ['', [Validators.required, Validators.pattern(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/)]],
       rg: ['', [Validators.required, Validators.maxLength(20)]],
       estadoCivil: ['', Validators.required],
-      telefone: ['', [Validators.required, Validators.pattern(/^\(\d{2}\) \d \d{4}-\d{4}$/)]],
+      telefone: ['', [Validators.required, Validators.pattern(/^\(\d{2}\) \d \d{4,5}-\d{4}$/)]],
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required, Validators.minLength(8)]],
       naturalidade: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
@@ -79,8 +79,15 @@ export class CadastroDocenteComponent implements OnInit {
   onSubmit(): void {
     if (this.docenteForm.valid) {
       const docente = this.docenteForm.value;
-      docente.id = this.generateUniqueId();
-      this.docenteService.saveDocente(docente);
+      const docenteToSave = {
+        ...docente, role: "DOCENTE", id: this.generateUniqueId()
+      }
+      docenteToSave.id = this.generateUniqueId();
+
+      const docentes = JSON.parse(localStorage.getItem('docentes') || '[]');
+      docentes.push(docenteToSave);
+      localStorage.setItem('docentes', JSON.stringify(docentes));
+
       alert('Cadastro realizado com sucesso!');
       this.router.navigate(['/']);
     } else {
@@ -88,11 +95,20 @@ export class CadastroDocenteComponent implements OnInit {
     }
   }
 
+  onEdit(): void {
+    alert('Editar funcionalidade não implementada.');
+  }
+
+  onDelete(): void {
+    alert('Deletar funcionalidade não implementada.');
+  }
+
   onCancel(): void {
-    this.router.navigate(['/']); 
+    this.router.navigate(['/']);
   }
 
   private generateUniqueId(): string {
     return Math.random().toString(36).substr(2, 9);
   }
+
 }

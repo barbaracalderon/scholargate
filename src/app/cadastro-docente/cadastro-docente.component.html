@@ -97,12 +97,12 @@
 
         <div class="mb-3">
           <label for="cidade" class="form-label">Cidade:</label>
-          <input id="cidade" formControlName="cidade" type="text" class="form-control" [attr.disabled]="true" />
+          <input id="cidade" formControlName="cidade" type="text" class="form-control" readonly />
         </div>
 
         <div class="mb-3">
           <label for="estado" class="form-label">Estado:</label>
-          <input id="estado" formControlName="estado" type="text" class="form-control" [attr.disabled]="true" />
+          <input id="estado" formControlName="estado" type="text" class="form-control" readonly />
         </div>
 
         <div class="mb-3">
@@ -131,10 +131,13 @@
         </div>
 
         <div class="mb-3">
-          <label for="materias" class="form-label">Matérias:</label>
-          <select id="materias" formControlName="materias" class="form-select" multiple>
-            <option *ngFor="let materia of materias" [value]="materia">{{ materia }}</option>
-          </select>
+          <div class="form-group">
+            <label for="materias">Matérias:</label>
+            <select id="materias" formControlName="materias" multiple>
+              <option *ngFor="let materia of materias" [value]="materia">{{ materia }}</option>
+            </select>
+          </div>
+          
           <div *ngIf="docenteForm.get('materias')?.invalid && docenteForm.get('materias')?.touched" class="text-danger">
             Matérias são obrigatórias.
           </div>
@@ -142,6 +145,8 @@
 
         <div class="d-flex justify-content-end">
           <button type="submit" class="btn btn-primary me-2" [disabled]="!docenteForm.valid">Salvar</button>
+          <button type="button" class="btn btn-secondary me-2" (click)="onEdit()">Editar</button>
+          <button type="button" class="btn btn-danger" (click)="onDelete()">Deletar</button>
           <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
         </div>
       </form>
