@@ -1,12 +1,42 @@
-/* Adiciona um pouco mais de estilo ao formulário */
-form {
-    background-color: #ffffff; /* Fundo branco para o formulário */
-    border-radius: 0.5rem; /* Bordas arredondadas */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.form-group input[type="date"] {
+  padding: 6px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-container button {
+  width: 48%;
+}
+
+@media (max-width: 576px) {
+  .btn-container {
+    flex-direction: column;
   }
-  
-  /* Adiciona um estilo extra aos botões */
-  .btn {
-    border-radius: 0.25rem; /* Bordas arredondadas para os botões */
+
+  .btn-container button {
+    width: 100%;
+    margin-bottom: 10px;
   }
-  
+}
