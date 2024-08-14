@@ -18,7 +18,7 @@ export class CadastroAvaliacaoComponent implements OnInit {
   docentes: string[] = [];
   turmas: string[] = [];
   materias = ['Matemática', 'Física', 'Química', 'História'];
-  alunos: string[] = [];
+  alunos = ['Pedro Torres'];
 
   constructor(
     private fb: FormBuilder,
@@ -67,10 +67,18 @@ export class CadastroAvaliacaoComponent implements OnInit {
 
   loadAlunos(): void {
     const storedAlunos = localStorage.getItem('alunos');
+    
+    let alunosArray: string[] = [];
+  
     if (storedAlunos) {
-      const alunosArray = JSON.parse(storedAlunos);
-      this.alunos = alunosArray.map((aluno: any) => aluno.nome);
+      alunosArray = JSON.parse(storedAlunos).map((aluno: any) => aluno.nome);
     } else {
+      alert('Nenhum aluno encontrado no localStorage.');
+    }
+  
+    this.alunos = [...new Set([...this.alunos, ...alunosArray])];
+  
+    if (this.alunos.length === 0) {
       alert('Nenhum aluno encontrado.');
     }
   }
