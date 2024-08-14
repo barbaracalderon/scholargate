@@ -104,7 +104,7 @@ export class CadastroAlunoComponent implements OnInit {
   }
 
   onCancel(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/listagem-notas']);
   }
 
   private generateUniqueId(): string {
