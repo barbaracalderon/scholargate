@@ -40,6 +40,7 @@ export class CadastroAvaliacaoComponent implements OnInit {
       horario: [formatDate(new Date(), 'HH:mm', 'en-US'), Validators.required],
       docente: ['', Validators.required],
       materia: ['', Validators.required],
+      turma: ['', Validators.required],
       aluno: ['', Validators.required],
       nota: ['', [Validators.required, Validators.min(0), Validators.max(10)]],
     });
