@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { CadastroDocenteComponent } from './cadastro-docente/cadastro-docente.component';
 import { CadastroAlunoComponent } from './cadastro-aluno/cadastro-aluno.component';
 import { CadastroTurmaComponent } from './cadastro-turma/cadastro-turma.component';
+import { CadastroAvaliacaoComponent } from './cadastro-avaliacao/cadastro-avaliacao.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -11,7 +12,5 @@ export const routes: Routes = [
   { path: 'cadastro-docente', component: CadastroDocenteComponent},
   { path: 'cadastro-aluno', component: CadastroAlunoComponent },
   { path: 'cadastro-turma', component: CadastroTurmaComponent },
-
-
-  
+  { path: 'cadastro-avaliacao', component: CadastroAvaliacaoComponent}
 ];
