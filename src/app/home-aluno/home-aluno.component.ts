@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home-aluno',
@@ -14,6 +14,10 @@ export class HomeAlunoComponent implements OnInit {
   materias: string[] = [];
   cursosExtras: string[] = ['Artesanato', 'Informática', 'Artes Cênicas']; 
 
+  constructor(
+    private router: Router,
+  ) {}
+
   ngOnInit() {
     this.avaliacoes = [
       { nome: 'Prova de Matemática', materia: 'Matemática', data: '2024-08-15' },
@@ -25,6 +29,6 @@ export class HomeAlunoComponent implements OnInit {
   }
 
   verMaisAvaliacao(avaliacao: any) {
-    alert(`Redirecionando para a página de notas de aluno para a avaliação: ${avaliacao.nome}.`);
+    this.router.navigate(['/listagem-notas']);
   }
 }
