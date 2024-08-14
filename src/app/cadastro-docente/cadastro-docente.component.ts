@@ -18,7 +18,7 @@ export class CadastroDocenteComponent implements OnInit {
   docenteForm!: FormGroup;
   generos = ['Masculino', 'Feminino', 'Outro'];
   estadosCivis = ['Solteiro(a)', 'Casado(a)', 'Divorciado(a)', 'Viúvo(a)'];
-  materias = ['Matemática', 'Física', 'Química', 'História']; // Exemplo de matérias
+  materias = ['Matemática', 'Física', 'Química', 'História'];
   isEditing = false;
 
   constructor(
