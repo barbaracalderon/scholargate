@@ -89,7 +89,7 @@ export class CadastroDocenteComponent implements OnInit {
       localStorage.setItem('docentes', JSON.stringify(docentes));
 
       alert('Cadastro realizado com sucesso!');
-      this.router.navigate(['/']);
+      this.router.navigate(['/listagem-docentes']);
     } else {
       alert('Por favor, preencha todos os campos obrigatórios.');
     }

@@ -18,4 +18,11 @@ export class DocenteService {
     const docentes = localStorage.getItem(this.STORAGE_KEY);
     return docentes ? JSON.parse(docentes) : [];
   }
+
+  deleteDocente(docenteId: number): void {
+    const docentes = JSON.parse(localStorage.getItem(this.STORAGE_KEY) || '[]');
+    const updatedDocentes = docentes.filter((docente: any) => docente.id !== docenteId);
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(updatedDocentes));
+  }
+
 }
