@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-admin',
@@ -13,10 +14,13 @@ export class HomeAdminComponent implements OnInit {
   docentesCadastrados: number = 0;
   turmasCadastradas: number = 0;
 
-  alunos: any[] = []; // Aqui você pode carregar os dados reais dos alunos
+  alunos: any[] = [];
+
+  constructor(
+    private router: Router,
+  ) {}
 
   ngOnInit() {
-    // Mock data - Em uma aplicação real, você carregaria esses dados de um serviço
     this.alunosCadastrados = 120;
     this.docentesCadastrados = 25;
     this.turmasCadastradas = 8;
@@ -29,12 +33,10 @@ export class HomeAdminComponent implements OnInit {
   }
 
   pesquisarAluno(query: string) {
-    // Função de pesquisa - aqui você pode implementar a lógica para buscar alunos
     alert('Função de pesquisa ainda não implementada.');
   }
 
   verMaisAluno(aluno: any) {
-    // Redireciona para a página de cadastro do aluno
-    alert(`Redirecionando para a página de cadastro de ${aluno.nome}.`);
+    this.router.navigate(['/cadastro-aluno']);
   }
 }

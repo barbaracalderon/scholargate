@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home-docente',
@@ -10,7 +10,12 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./home-docente.component.css']
 })
 export class DocenteHomeComponent implements OnInit {
-  alunos: any[] = []; // Dados dos alunos
+  alunos: any[] = [];
+
+  constructor(
+    private router: Router,
+  ) {}
+
 
   ngOnInit() {
     this.alunos = [
@@ -25,6 +30,6 @@ export class DocenteHomeComponent implements OnInit {
   }
 
   lancarNota(aluno: any) {
-    alert(`Redirecionando para a página de lançamento de nota para ${aluno.nome}.`);
+    this.router.navigate(['/cadastro-avaliacao']);
   }
 }
