@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,4 +19,11 @@ export class AvaliacaoService {
     const avaliacoes = localStorage.getItem(this.STORAGE_KEY);
     return avaliacoes ? JSON.parse(avaliacoes) : [];
   }
+
+  getAvaliacoesByDocente(docenteId: number): Observable<any[]> {
+    const avaliacoes = JSON.parse(localStorage.getItem(this.STORAGE_KEY) || '[]');
+    const filteredAvaliacoes = avaliacoes.filter((avaliacao: any) => avaliacao.docenteId === docenteId);
+    return of(filteredAvaliacoes);
+  }
+
 }
