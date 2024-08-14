@@ -72,7 +72,7 @@ export class CadastroTurmaComponent implements OnInit {
       localStorage.setItem('turmas', JSON.stringify(turmas));
 
       alert('Cadastro realizado com sucesso!');
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     } else {
       alert('Por favor, preencha todos os campos obrigatórios.');
     }
