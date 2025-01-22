@@ -1,4 +1,4 @@
-_(English version | [Click here for the Portuguese version.](https://github.com/barbaracalderon/scholargate/blob/main/src/assets/README-pt.md))_
+_(English version | [Click here for the Portuguese version.](https://github.com/barbaracalderon/scholargate/blob/main/README-pt.md))_
 
 # Scholargate
 
