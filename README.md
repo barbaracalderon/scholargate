@@ -1,98 +1,95 @@
+_(English version | [Click here for the Portuguese version.](https://github.com/barbaracalderon/scholargate/blob/main/src/assets/README-pt.md))_
+
 # Scholargate
 
-Scholargate é um sistema de gerenciamento acadêmico desenvolvido utilizando Angular, Bootstrap, CSS, componentes standalone e Local Storage para armazenamento de dados. Este projeto foi criado para oferecer uma plataforma de fácil acesso e gestão para administradores, docentes e alunos, cada um com seu próprio conjunto de funcionalidades e permissões.
+Scholargate is an academic management system developed using Angular, Bootstrap, CSS, standalone components, and Local Storage for data persistence. This project provides an accessible platform for administrators, teachers, and students, each with specific functionalities and permissions.
 
-## Funcionalidades
+This project is developed using HTML, CSS, JavaScript, Bootstrap, and localStorage for data storage. This is part of an individual activity within the Fullstack course curriculum at SENAI/SC by Lab365. The content displayed is in Portuguese-BR language.
 
-### 1. **Autenticação**
-- **Login:** Diferentes tipos de usuários (ADMIN, DOCENTE, ALUNO) podem se autenticar no sistema.
-- **Página Inicial Personalizada:** O conteúdo da página inicial é dinâmico e se ajusta ao tipo de usuário logado, mostrando informações relevantes e personalizadas.
+![LoginPage](src/assets/sch_01.png)
 
-### 2. **Menu Lateral Dinâmico**
-- O menu lateral se adapta de acordo com o tipo de usuário logado, fornecendo acesso rápido às funcionalidades específicas de cada perfil.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-### 3. **Toolbar**
-- Uma barra de ferramentas que permanece fixa na parte superior da página, permitindo navegação e acesso a informações importantes.
+## Author
 
-### 4. **Páginas Principais**
+Barbara Calderon, software developer.
 
-#### **Página Inicial**
-- Apresenta uma visão geral e personalizada para o usuário logado, mostrando as informações mais relevantes de acordo com seu perfil (ADMIN, DOCENTE, ALUNO).
+- [Github](https://www.github.com/barbaracalderon)
+- [LinkedIn](https://www.linkedin.com/in/barbaracalderondev)
+- [Twitter](https://www.x.com/bederoni)
 
-#### **Cadastro de Aluno**
-- Página para registrar novos alunos no sistema, onde são inseridas informações pessoais e acadêmicas.
+## Table of Features
 
-#### **Cadastro de Avaliação**
-- Página destinada ao cadastro de avaliações, onde o docente pode inserir notas para os alunos em diferentes disciplinas.
+| **Feature**               | **Description**                                                                                                                                              |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Authentication**        | **Login**: Supports different user roles (ADMIN, TEACHER, STUDENT) to log into the system. <br> **Personalized Homepage**: Dynamically adjusts homepage content based on the user role, showing relevant information. |
+| **Dynamic Sidebar Menu**  | The sidebar adapts to the logged-in user role, offering quick access to specific functionalities.                                                             |
+| **Toolbar**               | A fixed toolbar at the top of the page enables navigation and access to key information.                                                                      |
+| **Homepage**              | Provides an overview tailored to the logged-in user, displaying relevant information based on their role (ADMIN, TEACHER, STUDENT).                           |
+| **Student Registration**  | A page for registering new students, including personal and academic details.                                                                                 |
+| **Grade Entry**           | A page where teachers can enter student grades for various subjects.                                                                                          |
+| **Teacher Registration**  | Allows administrators to register new teachers with all required details.                                                                                      |
+| **Class Registration**    | A page for registering classes and associating them with specific teachers and subjects.                                                                      |
+| **Teacher Listing**       | Displays a list of all registered teachers, allowing administrators to manage their information.                                                              |
+| **Student Grades Listing**| Shows all grades recorded for a specific student, accessible by both teachers and students.                                                                   |
 
-#### **Cadastro de Docente**
-- Permite que administradores registrem novos docentes no sistema com todas as informações necessárias.
+![AdminHomePage](src/assets/sch_02.png)
 
-#### **Cadastro de Turma**
-- Página onde as turmas são registradas, associando-as a docentes e disciplinas específicas.
 
-#### **Listagem de Docentes**
-- Exibe uma lista de todos os docentes cadastrados no sistema, permitindo que administradores gerenciem essas informações.
+## Technologies Used
 
-#### **Listagem de Notas de Aluno**
-- Mostra todas as notas cadastradas para um aluno específico, permitindo que tanto docentes quanto alunos visualizem o desempenho acadêmico.
+- **Angular:** Main framework for frontend development.
+- **Bootstrap:** Used for styling and creating responsive layouts.
+- **CSS:** For additional customization and personalized styling.
+- **Standalone Components:** Angular's modular structure for better organization and reusability.
+- **Local Storage:** Client-side data storage for persisting information without a backend.
 
-## Tecnologias Utilizadas
+## Project Structure
 
-- **Angular:** Framework principal utilizado para o desenvolvimento do frontend.
-- **Bootstrap:** Utilizado para estilização e criação de layouts responsivos.
-- **CSS:** Para customização adicional e criação de estilos personalizados.
-- **Standalone Components:** Estrutura modular do Angular utilizada para melhorar a organização e reutilização dos componentes.
-- **Local Storage:** Armazenamento de dados no lado do cliente para persistência de informações sem a necessidade de um backend.
+- **src/app/components:** Contains all project components, organized by functionality.
+- **src/app/services:** Services managing business logic and interactions with Local Storage.
+- **src/app/models:** Data model definitions used throughout the project.
+- **src/assets:** Static files, such as images and icons.
 
-## Estrutura do Projeto
+## Installation and Execution
 
-- **src/app/components:** Contém todos os componentes do projeto, organizados por funcionalidades.
-- **src/app/services:** Serviços que gerenciam a lógica de negócio e interações com o Local Storage.
-- **src/app/models:** Definições de modelos de dados utilizados ao longo do projeto.
-- **src/assets:** Arquivos estáticos, como imagens e ícones.
-
-## Instalação e Execução
-
-### Pré-requisitos
+### Prerequisites
 - Node.js
 - Angular CLI
 
-### Passos para executar o projeto localmente
+### Steps to Run the Project Locally
 
-1. Clone o repositório:
+1. Clone the repository:
    ```bash
-   git clone https://github.com/seu-usuario/scholargate.git
-   ```
+   git clone https://github.com/your-username/scholargate.git
 
-2. Navegue até o diretório do projeto:
+2. NNavigate to the project directory:
 
     ```
     cd scholargate
     ```
 
-3. Instale as dependências
+3. Install dependencies:
 
     ```
     npm install
     ```
 
-4. Execute o projeto
+4. Run the project:
 
     ```
     ng serve
     ```
 
-5. Acesse o projeto no navegador
+5. Access the project in the browser:
 
     ```
     http://localhost:4200
     ```
 
+### Mock Users
 
-### Mock de usuários
-
-O projeto também conta com um mock de usuários para realizar o login:
+The project includes mock user data for login:
 
 ```typescript
     const usersMock = [
@@ -116,12 +113,9 @@ O projeto também conta com um mock de usuários para realizar o login:
         }
     ];
 ```
+## Contributions
+Contributions are welcome. If you have suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request.
 
-## Contribuições
+Regards, 
 
-Contribuições são bem-vindas! Se você tiver sugestões, melhorias ou quiser corrigir algum problema, fique à vontade para abrir uma issue ou enviar um pull request.
-
-## Licença
-
-Este projeto está licenciado sob a MIT License.
-
+Barbara Calderon.
